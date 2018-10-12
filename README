@@ -1,6 +1,6 @@
 iphelper plugin for DokuWiki
 
-Provides automatic links to HTML reports on your server, by searching the wikitext.
+Provides tools on automatically detected ipadresses within the wiki text.
 
 All documentation for this plugin can be found at
 http://www.dokuwiki.org/plugin:iphelper 
