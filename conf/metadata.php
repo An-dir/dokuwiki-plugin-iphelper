@@ -38,3 +38,4 @@ $meta['tool9url'] = array('string');
 $meta['tool10urltarget']   = array('multichoice','_choices' => array('_self','_blank','_parent','_top'));
 $meta['tool10name'] = array('string');
 $meta['tool10url'] = array('string');
+$meta['rawtools'] = array('');

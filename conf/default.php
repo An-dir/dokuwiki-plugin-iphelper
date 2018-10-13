@@ -37,3 +37,8 @@ $conf['tool9url']    = 'ftp://%ip%';
 $conf['tool10urltarget']    = '_blank';
 $conf['tool10name']    = 'ssh://%ip% (erfordert Windows mit Anpassungen)';
 $conf['tool10url']    = 'ssh://%ip%';
+$conf['rawtools']    = '<a href="https://whois.domaintools.com/%ip%" target="_blank">whois.domaintools.com/%ip%</a><br>
+<a href="https://www.shodan.io/search?query=%ip%" target="_blank">https://www.shodan.io/search?query=%ip%</a><br>
+
+<a href="https://mxtoolbox.com/SuperTool.aspx?action=blacklist%3a%ip%&run=toolpage" target="_blank">https://mxtoolbox.com/SuperTool.aspx?action=blacklist%3a%ip%&run=toolpage</a><br>
+';
