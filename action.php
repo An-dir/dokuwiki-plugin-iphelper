@@ -71,7 +71,6 @@ class action_plugin_iphelper extends DokuWiki_Action_Plugin {
   </div>
 
 </div>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
 // Get the iphelper
 var iphelper = document.getElementById('myiphelper');
@@ -101,16 +100,16 @@ window.onclick = function(event) {
 
 
 
-$( ".iphelper" ).click(function() {
+jQuery( ".iphelper" ).click(function() {
 iphelper.style.display = "block";
-var iphelperaddress = $(this).text();
+var iphelperaddress = jQuery(this).text();
 document.getElementById('iphelperinput').value = iphelperaddress;
 document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplate').innerHTML.replace(/\%ip\%/g, iphelperaddress);
 });
 
 
 
-$( "#iphelperinput" ).keyup(function() {
+jQuery( "#iphelperinput" ).keyup(function() {
 var iphelperaddress = document.getElementById('iphelperinput').value;
 document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplate').innerHTML.replace(/\%ip\%/g, iphelperaddress);
 });
