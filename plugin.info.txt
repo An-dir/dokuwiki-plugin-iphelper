@@ -1,7 +1,6 @@
 base   iphelper
 author An-dir
 email  1.c-j@gmx.de
-date   2018-10-13 
 date   2018-10-24 
 name   iphelper plugin
 desc   searches for IP adresses like 123.45.67.89 and inserts a customizeable menu. Secondly searches for Network Adresses like 123.45.67.89/24 and inserts a link to a subnet calculator
