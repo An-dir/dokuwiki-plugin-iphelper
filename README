@@ -3,7 +3,6 @@ iphelper plugin for DokuWiki
 Provides tools on automatically detected ipadresses within the wiki text.
 searches for IP adresses like 123.45.67.89 and inserts a customizeable menu. Secondly searches for Network Adresses like 123.45.67.89/24 and inserts a link to a subnet calculator
 
-
 All documentation for this plugin can be found at
 http://www.dokuwiki.org/plugin:iphelper 
 

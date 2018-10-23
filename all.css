@@ -6,8 +6,8 @@
 	cursor: pointer;
 }
 
-/* The Modal (background) */
-.modal {
+/* The iphelper (background) */
+.myiphelper {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -24,8 +24,8 @@
     animation-duration: 0.4s
 }
 
-/* Modal Content */
-.modal-content {
+/* iphelper Content */
+.iphelper-content {
     position: fixed;
     bottom: 0;
     background-color: #fefefe;
@@ -51,15 +51,15 @@
     cursor: pointer;
 }
 
-.modal-header {
+.iphelper-header {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.iphelper-body {padding: 2px 16px;}
 
-.modal-footer {
+.iphelper-footer {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;

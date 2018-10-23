@@ -92,29 +92,6 @@ class syntax_plugin_iphelper extends DokuWiki_Syntax_Plugin {
             }
             if ($type == "ip") {
                 if (preg_match("/^(?:(?:25[0-4]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/",$ip)) { # der string wurde angepasst, damit subnetmasken nicht gefunden werden (am anfang 0-4 anstelle von 0-5
-                    $subnetcalculator = $this->getConf('subnetcalculator');
-                    $tool1name = $this->getConf('tool1name');
-                    $tool2name = $this->getConf('tool2name');
-                    $tool3name = $this->getConf('tool3name');
-                    $tool4name = $this->getConf('tool4name');
-                    $tool5name = $this->getConf('tool5name');
-                    $tool6name = $this->getConf('tool6name');
-                    $tool7name = $this->getConf('tool7name');
-                    $tool8name = $this->getConf('tool8name');
-                    $tool9name = $this->getConf('tool9name');
-                    $tool10name = $this->getConf('tool10name');
-                    
-
-                    if (strlen($tool1name) > 1) {$tool1url = $this->getConf('tool1url');$tool1urltarget = $this->getConf('tool1urltarget');$tool1url = str_ireplace("%ip%", $ip, $tool1url, $tool1replacecount); $tool1html = "<a href=\"". $tool1url ."\" target=\"". $tool1urltarget ."\">" . $tool1name . "</a><br>";}
-                    if (strlen($tool2name) > 1) {$tool2url = $this->getConf('tool2url');$tool2urltarget = $this->getConf('tool2urltarget');$tool2url = str_ireplace("%ip%", $ip, $tool2url, $tool2replacecount); $tool2html = "<a href=\"". $tool2url ."\" target=\"". $tool2urltarget ."\">" . $tool2name . "</a><br>";}
-                    if (strlen($tool3name) > 1) {$tool3url = $this->getConf('tool3url');$tool3urltarget = $this->getConf('tool3urltarget');$tool3url = str_ireplace("%ip%", $ip, $tool3url, $tool3replacecount); $tool3html = "<a href=\"". $tool3url ."\" target=\"". $tool3urltarget ."\">" . $tool3name . "</a><br>";}
-                    if (strlen($tool4name) > 1) {$tool4url = $this->getConf('tool4url');$tool4urltarget = $this->getConf('tool4urltarget');$tool4url = str_ireplace("%ip%", $ip, $tool4url, $tool4replacecount); $tool4html = "<a href=\"". $tool4url ."\" target=\"". $tool4urltarget ."\">" . $tool4name . "</a><br>";}
-                    if (strlen($tool5name) > 1) {$tool5url = $this->getConf('tool5url');$tool5urltarget = $this->getConf('tool5urltarget');$tool5url = str_ireplace("%ip%", $ip, $tool5url, $tool5replacecount); $tool5html = "<a href=\"". $tool5url ."\" target=\"". $tool5urltarget ."\">" . $tool5name . "</a><br>";}
-                    if (strlen($tool6name) > 1) {$tool6url = $this->getConf('tool6url');$tool6urltarget = $this->getConf('tool6urltarget');$tool6url = str_ireplace("%ip%", $ip, $tool6url, $tool6replacecount); $tool6html = "<a href=\"". $tool6url ."\" target=\"". $tool6urltarget ."\">" . $tool6name . "</a><br>";}
-                    if (strlen($tool7name) > 1) {$tool7url = $this->getConf('tool7url');$tool7urltarget = $this->getConf('tool7urltarget');$tool7url = str_ireplace("%ip%", $ip, $tool7url, $tool7replacecount); $tool7html = "<a href=\"". $tool7url ."\" target=\"". $tool7urltarget ."\">" . $tool7name . "</a><br>";}
-                    if (strlen($tool8name) > 1) {$tool8url = $this->getConf('tool8url');$tool8urltarget = $this->getConf('tool8urltarget');$tool8url = str_ireplace("%ip%", $ip, $tool8url, $tool8replacecount); $tool8html = "<a href=\"". $tool8url ."\" target=\"". $tool8urltarget ."\">" . $tool8name . "</a><br>";}
-                    if (strlen($tool9name) > 1) {$tool9url = $this->getConf('tool9url');$tool9urltarget = $this->getConf('tool9urltarget');$tool9url = str_ireplace("%ip%", $ip, $tool9url, $tool9replacecount); $tool9html = "<a href=\"". $tool9url ."\" target=\"". $tool9urltarget ."\">" . $tool9name . "</a><br>";}
-                    if (strlen($tool10name) > 1) {$tool10url = $this->getConf('tool10url');$tool10urltarget = $this->getConf('tool10urltarget');$tool10url = str_ireplace("%ip%", $ip, $tool10url, $tool10replacecount); $tool10html = "<a href=\"". $tool10url ."\" target=\"". $tool10urltarget ."\">" . $tool10name . "</a><br>";}
                     $renderer->doc .= "" . "<span class=\"iphelper\">" . $ip . "</span>";
                 } else {
                     $renderer->doc .= "".$ip."";

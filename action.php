@@ -51,21 +51,21 @@ class action_plugin_iphelper extends DokuWiki_Action_Plugin {
 		
             $event->data .= <<<TEXT
 			
-<!-- The Modal Template -->
-<div style="display: none;" id="modaltemplate">$iphelperbase</div>
-<!-- The Modal -->
-<div id="myModal" class="modal">
+<!-- The iphelper Template -->
+<div style="display: none;" id="iphelpertemplate">$iphelperbase</div>
+<!-- The iphelper -->
+<div id="myiphelper" class="myiphelper">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header" style="font-size: 28px;">
+  <!-- iphelper content -->
+  <div class="iphelper-content">
+    <div class="iphelper-header" style="font-size: 28px;">
       <span class="close">&times;</span>
       iphelper toolbox <input type="text" id="iphelperinput"></input>
     </div>
-    <div class="modal-body">
+    <div class="iphelper-body">
       <p id="iphelperbodyp">you see this when javscript is not working correct</p>
     </div>
-    <div class="modal-footer">
+    <div class="iphelper-footer">
       <h3 id="iphelperfooter">&nbsp;</h3>
     </div>
   </div>
@@ -73,26 +73,26 @@ class action_plugin_iphelper extends DokuWiki_Action_Plugin {
 </div>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
-// Get the modal
-var modal = document.getElementById('myModal');
+// Get the iphelper
+var iphelper = document.getElementById('myiphelper');
 
-// Get the <span> element that closes the modal
+// Get the <span> element that closes the iphelper
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the iphelper 
 //btn.onclick = function() {
-  //  modal.style.display = "block";
+  //  iphelper.style.display = "block";
 //}
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on <span> (x), close the iphelper
 span.onclick = function() {
-    modal.style.display = "none";
+    iphelper.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// When the user clicks anywhere outside of the iphelper, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == iphelper) {
+        iphelper.style.display = "none";
     }
 }
 
@@ -102,17 +102,17 @@ window.onclick = function(event) {
 
 
 $( ".iphelper" ).click(function() {
-modal.style.display = "block";
+iphelper.style.display = "block";
 var iphelperaddress = $(this).text();
 document.getElementById('iphelperinput').value = iphelperaddress;
-document.getElementById('iphelperbodyp').innerHTML = document.getElementById('modaltemplate').innerHTML.replace(/\%ip\%/g, iphelperaddress);
+document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplate').innerHTML.replace(/\%ip\%/g, iphelperaddress);
 });
 
 
 
 $( "#iphelperinput" ).keyup(function() {
 var iphelperaddress = document.getElementById('iphelperinput').value;
-document.getElementById('iphelperbodyp').innerHTML = document.getElementById('modaltemplate').innerHTML.replace(/\%ip\%/g, iphelperaddress);
+document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplate').innerHTML.replace(/\%ip\%/g, iphelperaddress);
 });
 
 
