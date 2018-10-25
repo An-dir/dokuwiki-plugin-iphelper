@@ -5,7 +5,7 @@
  * @author An-dir <1.c-j@gmx.de>
  */
 
-$lang['subnetcalculator']      = 'URL for subnetcalculator<br>IP with subnet (CIDR) will be appended.';
+$lang['subnetcalculator']      = 'URL for subnetcalculator';
 $lang['tool1name']             = 'Name of the tool in tooltip<br>Tool with no name will be hidden';
 $lang['tool1url']              = 'URL  of the tool in tooltip<br>Variable %ip% gets replaced by ip';
 $lang['tool2name']             = 'Name of the tool in tooltip<br>Tool with no name will be hidden';
@@ -26,3 +26,4 @@ $lang['tool9name']             = 'Name of the tool in tooltip<br>Tool with no na
 $lang['tool9url']              = 'URL  of the tool in tooltip<br>Variable %ip% gets replaced by ip';
 $lang['tool10name']             = 'Name of the tool in tooltip<br>Tool with no name will be hidden';
 $lang['tool10url']              = 'URL  of the tool in tooltip<br>Variable %ip% gets replaced by ip';
+$lang['rawtools']              = 'Full HTML code to be displayed in default iphelper view<br>Variable %ip% gets replaced by ip';
