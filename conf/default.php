@@ -6,7 +6,7 @@
  */
 
 $conf['subnetcalculatortarget']    = '_blank';
-$conf['subnetcalculator']    = 'https://www.tunnelsup.com/subnet-calculator/?ip=';
+$conf['subnetcalculator']    = 'https://www.tunnelsup.com/subnet-calculator/?ip=%ip%';
 $conf['tool1urltarget']    = '_self';
 $conf['tool1name']    = 'RDP starten (erfordert Windows mit Anpassungen)';
 $conf['tool1url']    = 'rdp:%ip%';

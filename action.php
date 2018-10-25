@@ -20,6 +20,7 @@ class action_plugin_iphelper extends DokuWiki_Action_Plugin {
     function handle_content_display(&$event, $param) {
 		
 		            $subnetcalculator = $this->getConf('subnetcalculator');
+		            $subnetcalculatortarget = $this->getConf('subnetcalculatortarget');
                     $tool1name = $this->getConf('tool1name');
                     $tool2name = $this->getConf('tool2name');
                     $tool3name = $this->getConf('tool3name');
@@ -53,17 +54,18 @@ class action_plugin_iphelper extends DokuWiki_Action_Plugin {
 			
 <!-- The iphelper Template -->
 <div style="display: none;" id="iphelpertemplate">$iphelperbase</div>
+<div style="display: none;" id="iphelpertemplatemask"><a href="$subnetcalculator" target="$subnetcalculatortarget">Start SubnetCalc ($subnetcalculator)</a></div>
 <!-- The iphelper -->
 <div id="myiphelper" class="myiphelper">
 
   <!-- iphelper content -->
   <div class="iphelper-content">
     <div class="iphelper-header" style="font-size: 28px;">
-      <span class="close">&times;</span>
+      <span class="iphelperclose">&times;</span>
       iphelper toolbox <input type="text" id="iphelperinput"></input>
     </div>
     <div class="iphelper-body">
-      <p id="iphelperbodyp">you see this when javscript is not working correct</p>
+      <p id="iphelperbodyp">you see this when javscript or css is not working correct</p>
     </div>
     <div class="iphelper-footer">
       <h3 id="iphelperfooter">&nbsp;</h3>
@@ -76,12 +78,7 @@ class action_plugin_iphelper extends DokuWiki_Action_Plugin {
 var iphelper = document.getElementById('myiphelper');
 
 // Get the <span> element that closes the iphelper
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the iphelper 
-//btn.onclick = function() {
-  //  iphelper.style.display = "block";
-//}
+var span = document.getElementsByClassName("iphelperclose")[0];
 
 // When the user clicks on <span> (x), close the iphelper
 span.onclick = function() {
@@ -104,15 +101,22 @@ jQuery( ".iphelper" ).click(function() {
 iphelper.style.display = "block";
 var iphelperaddress = jQuery(this).text();
 document.getElementById('iphelperinput').value = iphelperaddress;
-document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplate').innerHTML.replace(/\%ip\%/g, iphelperaddress);
+if (iphelperaddress.search("/") != -1) {
+    document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplatemask').innerHTML.replace(/\%ip\%/g, iphelperaddress);
+} else {
+    document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplate').innerHTML.replace(/\%ip\%/g, iphelperaddress);
+}
 });
 
 
 
 jQuery( "#iphelperinput" ).keyup(function() {
 var iphelperaddress = document.getElementById('iphelperinput').value;
-document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplate').innerHTML.replace(/\%ip\%/g, iphelperaddress);
-});
+if (iphelperaddress.search("/") != -1) {
+    document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplatemask').innerHTML.replace(/\%ip\%/g, iphelperaddress);
+} else {
+    document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplate').innerHTML.replace(/\%ip\%/g, iphelperaddress);
+}});
 
 
 </script>

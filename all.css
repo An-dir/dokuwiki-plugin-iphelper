@@ -37,15 +37,17 @@
 }
 
 /* The Close Button */
-.close {
+.iphelperclose {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
+
 }
 
-.close:hover,
-.close:focus {
+.iphelperclose:hover,
+.iphelperclose:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
