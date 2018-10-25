@@ -75,7 +75,7 @@ class action_plugin_iphelper extends DokuWiki_Action_Plugin {
 </div>
 <script>
 // Get the iphelper
-var iphelper = document.getElementById('myiphelper');
+var iphelper = document.getElementById("myiphelper");
 
 // Get the <span> element that closes the iphelper
 var span = document.getElementsByClassName("iphelperclose")[0];
@@ -100,22 +100,22 @@ window.onclick = function(event) {
 jQuery( ".iphelper" ).click(function() {
 iphelper.style.display = "block";
 var iphelperaddress = jQuery(this).text();
-document.getElementById('iphelperinput').value = iphelperaddress;
+document.getElementById("iphelperinput").value = iphelperaddress;
 if (iphelperaddress.search("/") != -1) {
-    document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplatemask').innerHTML.replace(/\%ip\%/g, iphelperaddress);
+    document.getElementById("iphelperbodyp").innerHTML = document.getElementById("iphelpertemplatemask").innerHTML.replace(/\%ip\%/g, iphelperaddress);
 } else {
-    document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplate').innerHTML.replace(/\%ip\%/g, iphelperaddress);
+    document.getElementById("iphelperbodyp").innerHTML = document.getElementById("iphelpertemplate").innerHTML.replace(/\%ip\%/g, iphelperaddress);
 }
 });
 
 
 
 jQuery( "#iphelperinput" ).keyup(function() {
-var iphelperaddress = document.getElementById('iphelperinput').value;
+var iphelperaddress = document.getElementById("iphelperinput").value;
 if (iphelperaddress.search("/") != -1) {
-    document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplatemask').innerHTML.replace(/\%ip\%/g, iphelperaddress);
+    document.getElementById("iphelperbodyp").innerHTML = document.getElementById("iphelpertemplatemask").innerHTML.replace(/\%ip\%/g, iphelperaddress);
 } else {
-    document.getElementById('iphelperbodyp').innerHTML = document.getElementById('iphelpertemplate').innerHTML.replace(/\%ip\%/g, iphelperaddress);
+    document.getElementById("iphelperbodyp").innerHTML = document.getElementById("iphelpertemplate").innerHTML.replace(/\%ip\%/g, iphelperaddress);
 }});
 
 
