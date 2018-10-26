@@ -23,7 +23,7 @@ class syntax_plugin_iphelper extends DokuWiki_Syntax_Plugin {
         return array(
             'author' => 'An-Dir',
             'email'  => '1.c-j@gmx.de',
-            'date'   => '2018-10-25',
+            'date'   => '2018-10-26',
             'name'   => 'iphelper plugin',
             'desc'   => 'Provides tools on automatically detected ipadresses within the wiki text. searches for IP adresses like 123.45.67.89 and inserts a customizeable menu. Secondly searches for Network Adresses like 123.45.67.89/24 and inserts a link to a subnet calculator',
             'url'    => 'http://www.dokuwiki.org/plugin:iphelper',
