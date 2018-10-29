@@ -62,7 +62,7 @@ class action_plugin_iphelper extends DokuWiki_Action_Plugin {
   <div class="iphelper-content">
     <div class="iphelper-header" style="font-size: 28px;">
       <span class="iphelperclose">&times;</span>
-      iphelper toolbox <input type="text" id="iphelperinput" style="max-width: 95%; width: 400px;"></input>
+      iphelper toolbox <input type="text" id="iphelperinput"></input>
     </div>
     <div class="iphelper-body">
       <p id="iphelperbodyp">you see this when javscript or css is not working correct</p>
