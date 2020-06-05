@@ -48,7 +48,7 @@ class syntax_plugin_iphelper extends DokuWiki_Syntax_Plugin {
     /**
      * Read the information from the matched wiki text
      */
-    public function handle($match, $state, $pos, &$handler){
+    public function handle($match, $state, $pos, Doku_Handler $handler){
         $stripped = substr($match, 0);
         $splitted = preg_split("/[\:]/", $stripped);
         list($ip, $type) = $splitted;
@@ -59,7 +59,7 @@ class syntax_plugin_iphelper extends DokuWiki_Syntax_Plugin {
     /**
      * Generate HTML output
      */
-    public function render($mode, &$renderer, $data) {
+    public function render($mode, Doku_Renderer $renderer, $data) {
         if($mode != 'xhtml'){
             return false;
         }

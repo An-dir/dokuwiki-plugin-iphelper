@@ -13,7 +13,7 @@ require_once(DOKU_PLUGIN.'action.php');
 
 class action_plugin_iphelper extends DokuWiki_Action_Plugin {
 
-    function register(&$controller) {
+    function register(Doku_Event_Handler $controller) {
         $controller->register_hook('TPL_CONTENT_DISPLAY', 'BEFORE', $this, 'handle_content_display', array());
     }
 
@@ -51,7 +51,6 @@ class action_plugin_iphelper extends DokuWiki_Action_Plugin {
 		
 		
             $event->data .= <<<TEXT
-			
 <!-- The iphelper Template -->
 <div style="display: none;" id="iphelpertemplate">$iphelperbase</div>
 <div style="display: none;" id="iphelpertemplatemask"><a href="$subnetcalculator" target="$subnetcalculatortarget">Start SubnetCalc ($subnetcalculator)</a></div>
@@ -140,7 +139,7 @@ window.onclick = function(event) {
 
 
 
-jQuery( ".iphelper" ).click(function() {
+jQuery(".iphelper").click(function() {
 iphelper.style.display = "block";
 var iphelperaddress = jQuery(this).text();
 document.getElementById("iphelperinput").value = iphelperaddress;
