@@ -1,13 +1,10 @@
-/*global document: false */
-/*jslint browser:true */
-"use strict";
+jQuery(document).ready(function() {
 // Get the iphelper
 var iphelper = document.getElementById("myiphelper");
 var iphelpersubnetcalc = document.getElementById("calc");
 
 // Get the <span> element that closes the iphelper
-var span = document.getElementsByClassName("iphelperclose")[0];
-
+var span = document.querySelector('.iphelperclose');
 // When the user clicks on <span> (x), close the iphelper
 span.onclick = function () {
     iphelper.style.display = "none";
@@ -294,3 +291,4 @@ function changeSection(Section)
     document.getElementById("IPv6StaticSelector").className = 'sectionselector';
   }
 }
+});
