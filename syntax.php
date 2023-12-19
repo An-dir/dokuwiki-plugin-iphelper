@@ -50,8 +50,9 @@ class syntax_plugin_iphelper extends DokuWiki_Syntax_Plugin {
      */
     public function handle($match, $state, $pos, Doku_Handler $handler){
         $stripped = substr($match, 0);
-        $splitted = preg_split("/[\:]/", $stripped);
-        list($ip, $type) = $splitted;
+        $tmp = explode("-", $stripped,2);
+        $tmp = array_pad($tmp, 2, null);
+        list($ip, $type) = $tmp;
         if(preg_match("[\/]",$match)) { $type = "cidr" ;} else { $type = "ip";};
         return array($ip, $type);
     }
@@ -64,11 +65,13 @@ class syntax_plugin_iphelper extends DokuWiki_Syntax_Plugin {
             return false;
         }
         list($ip, $type) = $data;
-        if(htmlspecialchars($_GET["vecdo"]) == 'print'){
-           $printmode = true;
+        $printmode = false;
+        if(isset($_GET["vecdo"]) && htmlspecialchars($_GET["vecdo"]) == 'print'){
+            $printmode = true;
         }
-        if(htmlspecialchars($_GET["do"]) == 'export_pdf'){
-            $printmode  = true;
+
+        if(isset($_GET["do"]) && htmlspecialchars($_GET["do"]) == 'export_pdf'){
+            $printmode = true;
         }
         if ($printmode == true) {
             $renderer->doc .= "".$ip."";
